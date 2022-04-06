@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+	<!-- <meta http-equiv="X-UA-Compatible" content="IE=9" /> -->
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	<title>飞能吉供应链管理</title>
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./assets/css/style.css?v=6">
+
+	<!--[if !IE]>-->
+	<script src="./assets/js/jquery-3.2.1.js"></script>
+	<!--<![endif]-->
+
+	<!--[if IE]>-->
+		<!--[if gt IE 8]>
+			<script src="./assets/js/jquery-3.2.1.js"></script>
+		<![endif]-->
+		<!--[if lt IE 9]>
+			<script src="./assets/js/jquery-1.11.1.min.js"></script>
+			<script src="./assets/js/html5shiv.min.js"></script>
+			<script src="./assets/js/respond.min.js"></script>
+		<![endif]-->
+	<!--<![endif]-->
+
+	<script src="./assets/js/bootstrap.min.js"></script>
+	<script src="./assets/js/web.js"></script>
+
+</head>
+<body>
+	    <nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a href="#" class="navbar-brand logo">
+					<img src="./assets/images/logo1.png" class="screen-ele" alt="金仓货运logo">
+					<img src="./assets/images/logo3.png" class="phone-ele" alt="金仓货运logo">
+				</a>
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav navbar-right nav-list">
+					<li><a href="/index.html" class="">首页</a></li>
+					<li><a href="/service.html" class="">服务范围</a></li>
+					<li><a href="/news.html" class="active">新闻动态</a></li>
+					<li><a href="/about-us.html" class="">关于我们</a></li>
+					<li><a href="/contact-us.html" class="">联系我们</a></li>
+					<li>
+						<button type="button" class="btn-main lang-zh-cn">简体中文</button>
+						<button type="button" class="line-btn lang-en">English</button>
+					</li>
+				</ul>	
+			</div>
+		</div>
+	</nav>
+	<div id="index"></div>
+
+	<div class="banner news-banner"></div>
+	<div class=" news-page">
+		<div class="container">
+			<h4  class="line-tit"><span>新闻资讯</span></h4>
+			<ul class="news-page-list">
+															<li>
+							<!-- <div class="time-box">
+								<h4>04</h4>
+								<p>2018-01</p>
+							</div>
+							
+							<a href="/blog/1" class="news-item">
+								<h4 class="media-heading">湖南首开长沙至德黑兰国际货运班列</h4>
+								<div class="font-light">
+									<p>长沙—德黑兰的国际货运班列满载着51个集装箱，从湖南省长沙北铁路口岸驶出，直奔伊朗首都德黑兰。</p>
+								</div>
+							</a>				 -->
+						</li>
+												</ul>
+		</div>		
+	</div>
+	<style>
+    .pagination .active>span{
+        background-color:#f8c51e !important;
+        border-color:#f8c51e !important;
+        color:#fff !important;
+    }
+    .pagination>li>a, .pagination>li>span{
+        color:#333 !important;
+    }
+</style>
+	
+    <div id="footer">
+		<div class="container pb-46">
+			<div class="row">
+				<div class="col-md-7">
+					<img src="./assets/images/logo2.png" alt="金仓logo" class="logo">
+					<p>公司名称：武汉飞能吉供应链管理有限公司</p>
+					<p>公司地址：湖北省武汉市汉口建设大道847号瑞通广场B座8楼</p>
+				</div>
+				<div class="col-md-2">
+					<img src="./assets/images/erweima-zh.png" alt="二维码" style="width:75%;">
+				</div>
+				<div class="col-md-3 contact-info">
+					<p>联系电话：86 27 85487916<br/>
+						&#12288;&#12288;&#12288;&#12288;&#12288;86 27 85487909<br/>
+						&#12288;&#12288;&#12288;&#12288;&#12288;86 27 85487707
+					</p>
+					<p>传真：86 27 85487917</p>
+					<p>联系邮箱：aben_fnj@163.com</p>
+				</div>
+			</dix>
+		</div>
+	</div>
+
+	<div class="copy">
+		<div class="to-top" data-id="#index"></div>
+		<a href="https://beian.miit.gov.cn/"><p>版权所有：武汉飞能吉供应链管理有限公司 鄂ICP备07009122号-1</p></a>
+	</div>	
+
+	<script type="text/javascript">
+		$(function () {
+			//锚点定位
+			$(".nav-list li a").unbind("click").click(function(){
+				reachToPoint($(this));
+			});
+			//返回顶部
+			$(".to-top").unbind("click").click(function(){
+				reachToPoint($(this));
+			});
+
+			//中英文切换
+			$(".lang-zh-cn").unbind("click").click(function(){//中文
+				$(this).attr('disabled',true);
+				ajaxRequest('/set/language','POST',{
+					language:'zh_cn'
+				},function(res){
+
+					window.location.reload();
+				});
+
+			});
+
+			$(".lang-en").unbind("click").click(function(){//英文
+				$(this).attr('disabled',true);
+				ajaxRequest('/set/language','POST',{
+					language:'en'
+				},function(res){
+
+					window.location.reload();
+				});
+			});
+		});
+	</script>
+</body>
+</html>

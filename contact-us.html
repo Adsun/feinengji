@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+	<!-- <meta http-equiv="X-UA-Compatible" content="IE=9" /> -->
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	<title>飞能吉供应链管理</title>
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./assets/css/style.css?v=6">
+
+	<!--[if !IE]>-->
+	<script src="./assets/js/jquery-3.2.1.js"></script>
+	<!--<![endif]-->
+
+	<!--[if IE]>-->
+		<!--[if gt IE 8]>
+			<script src="./assets/js/jquery-3.2.1.js"></script>
+		<![endif]-->
+		<!--[if lt IE 9]>
+			<script src="./assets/js/jquery-1.11.1.min.js"></script>
+			<script src="./assets/js/html5shiv.min.js"></script>
+			<script src="./assets/js/respond.min.js"></script>
+		<![endif]-->
+	<!--<![endif]-->
+
+	<script src="./assets/js/bootstrap.min.js"></script>
+	<script src="./assets/js/web.js"></script>
+
+</head>
+<body>
+	<!--引用百度地图API-->
+<style type="text/css">
+		html,body{margin:0;padding:0;}
+		.iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+		.iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+		.BMap_Marker>div{
+			overflow: visible !important;
+		}
+		.BMapLabel{
+			left: 45px !important;
+			top: 4px !important;
+			min-width: 500px !important;
+		}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+    <nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a href="#" class="navbar-brand logo">
+					<img src="./assets/images/logo1.png" class="screen-ele" alt="金仓货运logo">
+					<img src="./assets/images/logo3.png" class="phone-ele" alt="金仓货运logo">
+				</a>
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav navbar-right nav-list">
+					<li><a href="/index.html" class="">首页</a></li>
+					<li><a href="/service.html" class="">服务范围</a></li>
+					<li><a href="/news.html" class="">新闻动态</a></li>
+					<li><a href="/about-us.html" class="">关于我们</a></li>
+					<li><a href="/contact-us.html" class="active">联系我们</a></li>
+					<li>
+						<button type="button" class="btn-main lang-zh-cn">简体中文</button>
+						<button type="button" class="line-btn lang-en">English</button>
+					</li>
+				</ul>	
+			</div>
+		</div>
+	</nav>
+	<div id="index"></div>
+    
+	<div class="banner about-banner"></div>
+	<div class="news-page">
+		<div class="container">
+			<h4  class="line-tit"><span>联系我们</span></h4>
+			<div class="article mini">
+				<p>武汉飞能吉供应链管理有限公司秉承“安全、忠实、高效、卓越”的服务宗旨，以专业、实力、进取、奉献为基础，诚愿与您建立友好的合作关系，求
+                        得共同发展。衷心感谢国内外同行及各界朋友对我们的信任和支持。				</p>
+				<h4></h4>
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+
+				<h4></h4>
+				<ul>
+					<li></li>
+				</ul>
+			</div>
+			<div class="contact-item">
+				<img src="./assets/images/tel1.png" alt="">
+				<dl>
+					<dt>电话</dt>
+					<dd>025-84457758</dd>
+				</dl>
+			</div>
+			<div class="contact-item">
+				<img src="./assets/images/email1.png" alt="">
+				<dl>
+					<dt>邮箱</dt>
+					<dd>aben_fnj@163.com</dd>
+				</dl>
+			</div>
+			<div class="contact-item">
+				<img src="./assets/images/web.png" alt="">
+				<dl>
+					<dt>网址</dt>
+					<dd>.</dd>
+				</dl>
+			</div>
+
+			<div class="map">
+				<!--百度地图容器-->
+				<div style="width:100%;height:550px;border:#ccc solid 1px;" id="dituContent"></div>
+			</div>
+
+		</div>		
+	</div>
+
+	<div id="footer">
+		<div class="container pb-46">
+			<div class="row">
+				<div class="col-md-7">
+					<img src="./assets/images/logo2.png" alt="金仓logo" class="logo">
+					<p>公司名称：武汉飞能吉供应链管理有限公司</p>
+					<p>公司地址：南京市江宁区乾德路9号3幢301-13</p>
+				</div>
+				<div class="col-md-2">
+					<img src="./assets/images/erweima-zh.png" alt="二维码" style="width:75%;">
+				</div>
+				<div class="col-md-3 contact-info">
+					<p>联系电话：025-84457758
+					</p>
+					<p>传真：86 27 85487917</p>
+					<p>联系邮箱：aben_fnj@163.com</p>
+				</div>
+			</dix>
+		</div>
+	</div>
+
+	<div class="copy">
+		<div class="to-top" data-id="#index"></div>
+		<a href="https://beian.miit.gov.cn/"><p>版权所有：武汉飞能吉供应链管理有限公司 鄂ICP备07009122号-1</p></a>
+	</div>	
+
+	
+	<script>
+		$(function(){
+						//创建和初始化地图函数：
+			function initMap(){
+				createMap();//创建地图
+				setMapEvent();//设置地图事件
+				addMapControl();//向地图添加控件
+				addMarker();//向地图中添加marker
+			}
+			
+			//创建地图函数：
+			function createMap(){
+				var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+				var point = new BMap.Point(118.921282,31.94891);//定义一个中心点坐标
+				map.centerAndZoom(point,18);//设定地图的中心点和坐标并将地图显示在地图容器中
+				window.map = map;//将map变量存储在全局
+			}
+			
+			//地图事件设置函数：
+			function setMapEvent(){
+				map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+				map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+				map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+				map.enableKeyboard();//启用键盘上下左右键移动地图
+			}
+			
+			//地图控件添加函数：
+			function addMapControl(){
+				//向地图中添加缩放控件
+			var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+			map.addControl(ctrl_nav);
+				//向地图中添加缩略图控件
+			var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+			map.addControl(ctrl_ove);
+				//向地图中添加比例尺控件
+			var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+			map.addControl(ctrl_sca);
+			}
+			
+			//标注点数组
+			var markerArr = [{title:"南京市江宁区乾德路9号3幢301-13",content:"南京市江宁区乾德路9号3幢301-13",point:"118.921282|31.94891",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+					];
+			//创建marker
+			function addMarker(){
+				for(var i=0;i<markerArr.length;i++){
+					var json = markerArr[i];
+					var p0 = json.point.split("|")[0];
+					var p1 = json.point.split("|")[1];
+					var point = new BMap.Point(p0,p1);
+					var iconImg = createIcon(json.icon);
+					var marker = new BMap.Marker(point,{icon:iconImg});
+					var iw = createInfoWindow(i);
+					var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+					marker.setLabel(label);
+					map.addOverlay(marker);
+					label.setStyle({
+								borderColor:"#808080",
+								color:"#333",
+								cursor:"pointer"
+					});
+					
+					(function(){
+						var index = i;
+						var _iw = createInfoWindow(i);
+						var _marker = marker;
+						_marker.addEventListener("click",function(){
+							this.openInfoWindow(_iw);
+						});
+						_iw.addEventListener("open",function(){
+							_marker.getLabel().hide();
+						})
+						_iw.addEventListener("close",function(){
+							_marker.getLabel().show();
+						})
+						label.addEventListener("click",function(){
+							_marker.openInfoWindow(_iw);
+						})
+						if(!!json.isOpen){
+							label.hide();
+							_marker.openInfoWindow(_iw);
+						}
+					})()
+				}
+			}
+			//创建InfoWindow
+			function createInfoWindow(i){
+				var json = markerArr[i];
+				var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+				return iw;
+			}
+			//创建一个Icon
+			function createIcon(json){
+				var icon = new BMap.Icon("./assets/images/mapn4.png", new BMap.Size('56px','56px'),{imageOffset: new BMap.Size(0,0),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+				return icon;
+			}
+			
+			initMap();//创建和初始化地图
+		});
+	</script>
+	<script type="text/javascript">
+		$(function () {
+			//锚点定位
+			$(".nav-list li a").unbind("click").click(function(){
+				reachToPoint($(this));
+			});
+			//返回顶部
+			$(".to-top").unbind("click").click(function(){
+				reachToPoint($(this));
+			});
+
+			//中英文切换
+			$(".lang-zh-cn").unbind("click").click(function(){//中文
+				$(this).attr('disabled',true);
+				ajaxRequest('/set/language','POST',{
+					language:'zh_cn'
+				},function(res){
+
+					window.location.reload();
+				});
+
+			});
+
+			$(".lang-en").unbind("click").click(function(){//英文
+				$(this).attr('disabled',true);
+				ajaxRequest('/set/language','POST',{
+					language:'en'
+				},function(res){
+
+					window.location.reload();
+				});
+			});
+		});
+	</script>
+</body>
+</html>
